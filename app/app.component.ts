@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 
-export class Rain {
-  recognize: string;
-  inquiry: string;
-  investigate: string;
-  nonid: boolean;
-}
+import { Rain } from './rain';
 
 enum Emotion {
   "Longing", "Anxious", "Overwhelm", "Victimized",
@@ -58,24 +53,9 @@ const RAINS: Rain[] = [
       <span class="feel">{{rain.recognize}}</span> <small>{{rain.inquiry}}</small>
     </li>
   </ul>
-  <div *ngIf="selectedRain">
-    <h2>A Closer Look at {{selectedRain.recognize}}</h2>
-    <div><b>{{selectedRain.inquiry}}</b></div>
-    <div>
-      <label><b>Investigate: </b></label>{{selectedRain.investigate}}
-    </div>
-    <div>
-      <label>
-        <b>
-          Do you recognize that your "self" is not defined by a set of emotions,
-        sensations, or stories?
-        </b>
-      </label>
-      <span>{{selectedRain.nonid}}</span>
-    </div>
-  </div>
+  <rain-detail [rain]="selectedRain"></rain-detail>
   `,
-styles: [`
+  styles: [`
     .selected {
       background-color: #CFD8DC !important;
       color: white;
@@ -113,6 +93,7 @@ styles: [`
       display: inline-block;
       font-size: small;
       color: white;
+      width: 7em;
       padding: 0.8em 0.7em 0 0.7em;
       background-color: #607D8B;
       line-height: 1em;

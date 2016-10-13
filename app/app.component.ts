@@ -77,15 +77,15 @@ export class AppComponent implements OnInit {
 
   constructor(private rainService: RainService) { }
 
-  onSelect(rain: Rain): void{
-    this.selectedRain = rain;
-  }
-
   getRains(): void {
     this.rains = this.rainService.getRains();
   }
 
   ngOnInit(): void {
     this.getRains();
+  }
+
+  onSelect(rain: Rain): void {
+    this.selectedRain = rain;
   }
 }

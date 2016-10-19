@@ -1,30 +1,35 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit }      from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location }               from '@angular/common';
 
-import { Rain } from './rain';
+import { Rain }        from './rain';
+import { RainService } from './rain.service';
 
 @Component({
-  selector: 'rain-detail',
-  template: `
-    <div *ngIf="rain">
-      <h2>A Closer Look at {{rain.recognize}}</h2>
-      <div><b>{{rain.inquiry}}</b></div>
-      <div>
-        <label><b>Investigate: </b></label>{{rain.investigate}}
-      </div>
-      <div>
-        <label>
-          <b>
-            Do you recognize that your "self" is not defined by a set of emotions,
-          sensations, or stories?
-          </b>
-        </label>
-        <span>{{rain.nonid}}</span>
-      </div>
-    </div>
-  `
+  moduleId: module.id,
+  selector: 'my-rain-detail',
+  templateUrl: 'rain-detail.component.html',
+  styleUrls: [ 'rain-detail.component.css' ]
 })
 
-export class RainDetailComponent {
-  @Input()
+export class RainDetailComponent implements OnInit {
+
   rain: Rain;
+
+  constructor(
+    private rainService: RainService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {}
+
+  ngOnInit(): void {
+    this.route.params.forEach((params: Params) => {
+      let id = +params['id'];
+      this.rainService.getRain(id)
+        .then(rain => this.rain = rain);
+    });
+  }
+  goBack(): void {
+    this.location.back();
+  }
 }

@@ -1,0 +1,18 @@
+<div *ngIf="rain">
+  <h2>A Closer Look at {{rain.recognize}} ({{rain.id}})</h2>
+  <div><b>{{rain.inquiry}}</b></div>
+  <div>
+    <label><b>Investigate: </b></label>
+    <input [ngModel)]="rain.investigate" placeholder="rain.investigate"/>
+  </div>
+  <div>
+    <label>
+      <b>
+        Do you recognize that your "self" is not defined by a set of emotions,
+      sensations, or stories?
+      </b>
+    </label>
+    <span>{{rain.nonid}}</span>
+  </div>
+</div>
+<button (click)="goBack()">Back</button>

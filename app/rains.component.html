@@ -1,0 +1,14 @@
+<h3>{{tagline}}</h3>
+<ul class="rains">
+  <li *ngFor="let rain of rains"
+    [class.selected]="rain == selectedRain"
+    (click)="onSelect(rain)">
+    <span class="feel">{{rain.recognize}}</span> <small>{{rain.inquiry}}</small>
+  </li>
+</ul>
+<div *ngIf="selectedRain">
+  <h2>
+    {{selectedRain.inquiry | uppercase}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

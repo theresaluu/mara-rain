@@ -25,16 +25,16 @@ let reflections: string[] = [
 ]
 
 export const RAINS: Rain[] = [
-  { recognize: Emotion[0], inquiry: Examine[0], investigate: reflections[0], nonid: false },
-  { recognize: Emotion[1], inquiry: Examine[1], investigate: reflections[1], nonid: false },
-  { recognize: Emotion[2], inquiry: Examine[2], investigate: reflections[2], nonid: false },
-  { recognize: Emotion[3], inquiry: Examine[3], investigate: reflections[3], nonid: false },
-  { recognize: Emotion[4], inquiry: Examine[4], investigate: reflections[4], nonid: false },
-  { recognize: Emotion[5], inquiry: Examine[0], investigate: reflections[5], nonid: false },
-  { recognize: Emotion[6], inquiry: Examine[1], investigate: reflections[6], nonid: false },
-  { recognize: Emotion[7], inquiry: Examine[2], investigate: reflections[7], nonid: false },
-  { recognize: Emotion[0], inquiry: Examine[3], investigate: reflections[0], nonid: false },
-  { recognize: Emotion[1], inquiry: Examine[4], investigate: reflections[1], nonid: false },
-  { recognize: Emotion[2], inquiry: Examine[0], investigate: reflections[2], nonid: false },
+  { recognize: Emotion[0], inquiry: Examine[0], investigate: reflections[0], nonid: false, id: 1},
+  { recognize: Emotion[1], inquiry: Examine[1], investigate: reflections[1], nonid: false, id: 2},
+  { recognize: Emotion[2], inquiry: Examine[2], investigate: reflections[2], nonid: false, id: 7},
+  { recognize: Emotion[3], inquiry: Examine[3], investigate: reflections[3], nonid: false, id: 6},
+  { recognize: Emotion[4], inquiry: Examine[4], investigate: reflections[4], nonid: false, id: 5},
+  { recognize: Emotion[5], inquiry: Examine[0], investigate: reflections[5], nonid: false, id: 4},
+  { recognize: Emotion[6], inquiry: Examine[1], investigate: reflections[6], nonid: false, id: 3},
+  { recognize: Emotion[7], inquiry: Examine[2], investigate: reflections[7], nonid: false, id: 8},
+  { recognize: Emotion[0], inquiry: Examine[3], investigate: reflections[0], nonid: false, id: 9},
+  { recognize: Emotion[1], inquiry: Examine[4], investigate: reflections[1], nonid: false, id: 10},
+  { recognize: Emotion[2], inquiry: Examine[0], investigate: reflections[2], nonid: false, id: 11}
 
 ];
